@@ -1,4 +1,5 @@
 import React from "react";
+import './TableRow.scss';
 
 export default ({row}) => {
   return (
