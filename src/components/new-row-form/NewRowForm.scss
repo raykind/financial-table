@@ -1,0 +1,24 @@
+.new-row-form-fields {
+  margin-bottom: 15px;
+  display: flex;
+  flex-direction: column;
+  .labels {
+    display: flex;
+    label {
+      width: 100px;
+      margin-bottom: 0;
+    }
+  }
+  .fields {
+    display: flex;
+    input[type=text] {
+      width: 100px;
+      height: 30px;
+      padding: 3px 8px;
+    }
+    button {
+      height: 30px;
+      padding: 3px 8px;
+    }
+  }
+}

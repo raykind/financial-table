@@ -1,0 +1,26 @@
+.new-row-form-fields {
+  margin-bottom: 15px;
+  display: flex;
+  flex-direction: column;
+}
+.new-row-form-fields .labels {
+  display: flex;
+}
+.new-row-form-fields .labels label {
+  width: 100px;
+  margin-bottom: 0;
+}
+.new-row-form-fields .fields {
+  display: flex;
+}
+.new-row-form-fields .fields input[type=text] {
+  width: 100px;
+  height: 30px;
+  padding: 3px 8px;
+}
+.new-row-form-fields .fields button {
+  height: 30px;
+  padding: 3px 8px;
+}
+
+/*# sourceMappingURL=NewRowForm.css.map */

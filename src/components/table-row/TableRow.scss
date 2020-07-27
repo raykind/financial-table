@@ -1,0 +1,9 @@
+tr:hover td {
+  background-color: #5576c2;
+  color: #fff;
+  cursor: pointer;
+}
+
+tr td {
+  transition: all .3s linear;
+}

@@ -1,0 +1,12 @@
+.financial-table {
+  border: 1px solid #e6e6e6;
+  th,
+  td {
+    padding: 0 10px;
+    border-right: 1px solid #e6e6e6;
+  }
+  thead tr {
+    border-bottom: 1px solid #e6e6e6;
+  }
+  margin: 15px 0;
+}
