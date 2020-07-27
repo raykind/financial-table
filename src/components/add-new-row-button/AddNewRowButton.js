@@ -1,19 +1,26 @@
 import React from "react";
-import {addNewRow} from "../../redux/actions/actions";
+import {toggleNewRow} from "../../redux/actions/actions";
 import {connect} from "react-redux";
 
 
-const AddNewRowButton = ({addNewRow}) => {
+const AddNewRowButton = ({toggleNewRow, isAdding}) => {
   return (
     <button
       className="btn btn-success mdi mdi-plus"
-      onClick={addNewRow}
+      onClick={toggleNewRow}
+      disabled={isAdding}
     />
   )
 }
 
 const mapDispatchToProps = {
-  addNewRow
+  toggleNewRow
 }
 
-export default connect(null, mapDispatchToProps)(AddNewRowButton);
+const mapStateToProps = state => {
+  return {
+    isAdding: state.rows.isAdding
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(AddNewRowButton);

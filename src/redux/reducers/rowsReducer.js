@@ -1,5 +1,5 @@
 import uniqueid from "lodash.uniqueid";
-import {ADD_NEW_ROW} from "../types/types";
+import {TOGGLE_NEW_ROW, PUSH_NEW_ROW} from "../types/types";
 
 const initialState = {
   rows: [
@@ -9,19 +9,34 @@ const initialState = {
       amount: '1000',
       comment: 'Лента'
     }
-  ]
+  ],
+  isAdding: false
 };
 
 export const rowsReducer = (state = initialState, action) => {
   switch (action.type) {
-    case ADD_NEW_ROW:
+    case TOGGLE_NEW_ROW:
       return {
         ...state,
-        rows: [
-          ...state.rows,
-          action.payload
-        ]
+        isAdding: !state.isAdding
       }
+    case PUSH_NEW_ROW:
+      const {date, amount, comment} = action.payload;
+      if (date && amount && comment) {
+        return {
+          ...state,
+          rows: [
+            ...state.rows,
+            {
+              id: uniqueid(),
+              date,
+              amount,
+              comment
+            }
+          ]
+        }
+      }
+      return state;
     default:
       return initialState;
   }

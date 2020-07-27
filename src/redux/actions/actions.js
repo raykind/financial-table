@@ -1,14 +1,19 @@
-import {ADD_NEW_ROW} from "../types/types";
-import uniqueid from "lodash.uniqueid";
+import {TOGGLE_NEW_ROW, PUSH_NEW_ROW} from "../types/types";
 
-export function addNewRow() {
+export function toggleNewRow() {
   return {
-    type: ADD_NEW_ROW,
+    type: TOGGLE_NEW_ROW
+  }
+}
+
+export function pushNewRow(newRow) {
+  const {date, amount, comment} = newRow;
+  return {
+    type: PUSH_NEW_ROW,
     payload: {
-      id: uniqueid(),
-      date: '13.07.2020',
-      amount: '500',
-      comment: 'Лента'
+      date,
+      amount,
+      comment
     }
   }
 }
