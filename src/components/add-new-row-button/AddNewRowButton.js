@@ -2,13 +2,23 @@ import React from "react";
 import {toggleNewRow} from "../../redux/actions/actions";
 import {connect} from "react-redux";
 
+const style = {
+  width: '50px',
+  transition: 'all .3s linear'
+}
 
 const AddNewRowButton = ({toggleNewRow, isAdding}) => {
   return (
     <button
-      className="btn btn-success mdi mdi-plus"
+      className={"btn mdi " +
+        (
+          isAdding
+            ? "btn-outline-danger mdi-close"
+            : "btn-outline-success mdi-plus"
+        )
+      }
+      style={style}
       onClick={toggleNewRow}
-      disabled={isAdding}
     />
   )
 }

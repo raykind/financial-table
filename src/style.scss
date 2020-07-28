@@ -1,0 +1,47 @@
+html, body, #root {
+  height: 100%;
+}
+
+.application {
+  display: grid;
+  grid-template-areas:
+          "header header header"
+          "nav content widgets"
+          "footer footer footer";
+  grid-template-rows: 60px 1fr 60px;
+  grid-template-columns: 2fr 5fr 1fr;
+  grid-gap: 10px;
+}
+
+.header, .footer, .widgets, .content, .nav {
+  padding: 15px;
+}
+
+.header {
+  grid-area: header;
+}
+
+.footer {
+  grid-area: footer;
+}
+.footer, .header {
+  background-color: #e6e6e6;
+}
+
+.content {
+  grid-area: content;
+  display: flex;
+  flex-direction: column;
+}
+
+.content, .nav, .widgets {
+  background-color: #f5faff;
+}
+
+.nav {
+  grid-area: nav;
+}
+
+.widgets {
+  grid-area: widgets;
+}

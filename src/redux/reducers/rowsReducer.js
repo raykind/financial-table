@@ -7,7 +7,8 @@ const initialState = {
       id: uniqueid(),
       date: '13.07.2020',
       amount: '1000',
-      comment: 'Лента'
+      comment: 'Лента',
+      isIncome: true
     }
   ],
   isAdding: false
@@ -21,7 +22,7 @@ export const rowsReducer = (state = initialState, action) => {
         isAdding: !state.isAdding
       }
     case PUSH_NEW_ROW:
-      const {date, amount, comment} = action.payload;
+      const {date, amount, comment, isIncome} = action.payload;
       if (date && amount && comment) {
         return {
           ...state,
@@ -31,7 +32,8 @@ export const rowsReducer = (state = initialState, action) => {
               id: uniqueid(),
               date,
               amount,
-              comment
+              comment,
+              isIncome
             }
           ]
         }

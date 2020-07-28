@@ -1,7 +1,22 @@
 tr:hover td {
   background-color: #5576c2;
-  color: #fff;
   cursor: pointer;
+}
+
+.income-row:hover td {
+  color: #80ff80;
+}
+
+.outcome-row:hover td {
+  color: #ff8080;
+}
+
+.income-row {
+  background-color: #daecda;
+}
+
+.outcome-row {
+  background-color: #f1c8c8;
 }
 
 tr td {
