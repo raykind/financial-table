@@ -7,13 +7,14 @@ export function toggleNewRow() {
 }
 
 export function pushNewRow(newRow) {
-  const {date, amount, comment} = newRow;
+  const {date, amount, comment, isIncome} = newRow;
   return {
     type: PUSH_NEW_ROW,
     payload: {
       date,
       amount,
-      comment
+      comment,
+      isIncome
     }
   }
 }

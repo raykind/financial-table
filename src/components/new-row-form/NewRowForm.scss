@@ -2,23 +2,62 @@
   margin-bottom: 15px;
   display: flex;
   flex-direction: column;
+
   .labels {
     display: flex;
     label {
-      width: 100px;
       margin-bottom: 0;
     }
   }
+
   .fields {
     display: flex;
+
     input[type=text] {
-      width: 100px;
       height: 30px;
       padding: 3px 8px;
+      transition: all .3s linear;
+      border: 1px solid #9e9e9e;
     }
+
+    input.income {
+      background-color: #daecda;
+    }
+    input.outcome {
+      background-color: #f1c8c8;
+    }
+
     button {
       height: 30px;
       padding: 3px 8px;
     }
+
+    .type-btn {
+      height: 100%;
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+    }
+    .type-btn.income {
+      color: green;
+    }
+    .type-btn.outcome {
+      color: red;
+    }
+  }
+
+  input[name=date],
+  label.date {
+    width: 150px;
+  }
+
+  input[name=amount],
+  label.amount {
+    width: 100px;
+  }
+
+  input[name=comment],
+  label.comment {
+    width: 400px;
   }
 }

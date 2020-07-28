@@ -1,0 +1,23 @@
+.prepend-details {
+  display: flex;
+  justify-content: flex-end;
+
+  label {
+    margin-right: 5px;
+    margin-left: 10px;
+  }
+
+  .outcome-value {
+    color: red;
+  }
+  .income-value {
+    color: green;
+  }
+
+  .profit-value.positive {
+    color: green
+  }
+  .profit-value.negative {
+    color: red
+  }
+}

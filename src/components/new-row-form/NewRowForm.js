@@ -10,7 +10,8 @@ class NewRowForm extends React.Component {
     this.state = {
       date: '',
       amount: '',
-      comment: ''
+      comment: '',
+      isIncome: false
     }
   }
 
@@ -19,7 +20,8 @@ class NewRowForm extends React.Component {
     this.setState({
       date: '',
       amount: '',
-      comment: ''
+      comment: '',
+      isIncome: false
     })
     this.props.toggleNewRow();
   }
@@ -33,35 +35,69 @@ class NewRowForm extends React.Component {
     }))
   }
 
+  changeIncomeType = () => {
+    this.setState(prev => ({
+      ...prev,
+      isIncome: !prev.isIncome
+    }))
+  }
+
   render() {
     return (
       <div className="new-row-form-fields">
         <div className="labels">
-          <label className="mr-3">Date</label>
-          <label className="mr-3">Amount</label>
-          <label>Comment</label>
+          <label className="date mr-3">Date</label>
+          <label className="amount mr-3">Amount</label>
+          <label className="comment mr-3">Comment</label>
         </div>
         <div className="fields">
           <input
             type="text"
-            className="mr-3"
+            className={
+              "mr-3 " + (
+                this.state.isIncome
+                  ? "income"
+                  : "outcome"
+              )
+            }
             name="date"
             onChange={this.changeInputHandler}
             value={this.state.date}
           />
           <input
             type="text"
-            className="mr-3"
+            className={
+              "mr-3 " + (
+                this.state.isIncome
+                  ? "income"
+                  : "outcome"
+              )
+            }
             name="amount"
             onChange={this.changeInputHandler}
             value={this.state.amount}
           />
           <input
             type="text"
-            className="mr-3"
             name="comment"
+            className={(
+              this.state.isIncome
+                ? "income"
+                : "outcome"
+            )}
             onChange={this.changeInputHandler}
             value={this.state.comment}
+          />
+          <div
+            className={
+              "type-btn mdi mx-2 " +
+              (
+                this.state.isIncome
+                  ? "mdi-plus income"
+                  : "mdi-minus outcome"
+              )
+            }
+            onClick={this.changeIncomeType}
           />
           <button
             className="btn btn-primary"

@@ -1,8 +1,14 @@
 import React from 'react';
 import Table from "./components/table/Table";
+import './style.scss';
 import AddNewRowButton from "./components/add-new-row-button/AddNewRowButton";
 import {connect} from "react-redux";
 import NewRowForm from "./components/new-row-form/NewRowForm";
+import PrependTableDetails from "./components/prepend-table-details/PrependTableDetails";
+
+const appStyle = {
+  height: '100%'
+}
 
 const getAdditionalFields = (isAdding) => {
   return isAdding ? <NewRowForm /> : null;
@@ -10,10 +16,17 @@ const getAdditionalFields = (isAdding) => {
 
 function App({isAdding}) {
   return (
-    <div className="container">
-      <Table />
-      {getAdditionalFields(isAdding)}
-      <AddNewRowButton />
+    <div className="application" style={appStyle}>
+      <div className="header"></div>
+      <div className="nav"></div>
+      <div className="content">
+        <PrependTableDetails />
+        <Table />
+        {getAdditionalFields(isAdding)}
+        <AddNewRowButton />
+      </div>
+      <div className="widgets"></div>
+      <div className="footer"></div>
     </div>
   );
 }
